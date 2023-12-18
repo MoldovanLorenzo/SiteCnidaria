@@ -1,0 +1,207 @@
+.Container {
+   position: relative;
+    margin: 0;
+    padding: 0;
+    height: 400vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      linear-gradient(to bottom, #070707, #518582),
+      radial-gradient(circle, #39049b 1%, transparent 1.5%);
+    transition: transform 0.1s ease-in-out;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+  
+  .Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 100px;
+    background-color: transparent;
+    color: white;
+    z-index: 1000;
+  }
+  
+  .LogoContainer {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+  }
+  
+  .LogoContainer img {
+    width: 40px;
+    margin-right: 10px;
+  }
+  
+  .ButtonsContainer button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    font-size: larger;
+  }
+  .ButtonsContainer button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  .ButtonsContainer button:hover::after {
+    transform: scaleX(1);
+  }
+  .BottomText {
+    position: relative;
+    top: calc(10px + var(--scroll-position) * 0.5);
+    left:10;
+    color: white;
+    font-size: 24px;
+    line-height: 1.2;
+    z-index: 999;
+    transition: top 0.3s ease-in-out;
+  }
+  .span{
+    font-family: 'Dhurjati', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+  }
+  .BottomText {
+    position: absolute;
+    top: calc(10vh + var(--scroll-position) * 0.3);
+    left: 100px;
+    color: white;
+    font-size: 24px;
+    line-height: 1.2;
+    z-index: 999;
+    transition: top 0.3s ease-in-out;
+  }
+  .BottomText h1 {
+    margin-top: 380px; 
+  }
+  
+  .BottomText h1:last-child {
+    margin-bottom: 20px; 
+  }
+  .BottomText h2{
+    font-size: 50px;
+  }
+  .assistancebutton {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    background-color: #518582;
+    color: white;
+    padding: 25px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 50px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .assistancebutton:hover {
+    background-color: #518582;
+  }
+  .BottomText h3 {
+    font-size:20px;
+    font-weight:lighter;
+    color: lightgrey;
+    margin-top:200px;
+  }
+  .hide {
+    display: none;
+  }
+  .BottomText h3 {
+    position: fixed;
+    animation: floatAnimation 1s ease-in-out infinite;
+  }
+  
+  @keyframes floatAnimation {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .restulhomepage {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.restulhomepage {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.restulhomepage h9,
+.restulhomepage h6,
+.restulhomepage h7,
+.restulhomepage h8 {
+    align-self: center;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 10px;
+} .mac-window {
+    width: 500px;
+    min-height: 300px;
+    background-color:#353935;
+    border-radius: 13px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .title-bar {
+    background-color:#000000;
+    padding: 8px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .title-bar .window-controls {
+    display: flex;
+    gap: 8px;
+  }
+
+  .title-bar button {
+    width: 15px;
+    height: 14px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color:#353935;
+  }
+
+  .content {
+    padding: 16px;
+  }
+  .footer {
+    position:relative;
+    bottom: 0;
+    top: 805px;
+    left: 0;
+    width: 1860px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+  }

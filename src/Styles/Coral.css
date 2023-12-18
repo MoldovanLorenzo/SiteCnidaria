@@ -1,0 +1,124 @@
+    
+.containerCoral {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.HeaderCoral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ff9a00;
+    color: white;
+    z-index: 1000;
+    margin-bottom: 0px;
+}
+
+.LogoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.LogoContainer img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.span {
+    font-size: 24px;
+}
+
+.panelCoral {
+    flex: 1;
+    background: linear-gradient(to bottom, #ff9a00, white);
+    overflow-y: auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    bottom: 10px;
+}
+
+.panelct {
+    width: 60%;
+    height: 73%;
+    align-self: center;
+    justify-self: center;
+    border: 2px solid #ff9a00;
+    background-color: white;
+    margin-left: 380px;
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 110px;
+}
+
+.profileSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.profileImage {
+    width: 250px;
+    height: 250px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    border: 4px solid #ff9a00;
+}
+
+.profileForm {
+    flex: 1;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.profileForm label {
+    margin-top: 10px;
+    color: #ff9a00;
+}
+
+.profileForm input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ff9a00;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.orangeButton {
+    background-color: #ff9a00;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    align-self: baseline;
+    transition: background-color 0.3s ease;
+    top:250px;
+    position: relative;
+    left: 200px;
+}
+
+.orangeButton:hover {
+    background-color: #e08400; 
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer-left button {
+    margin-right: 10px;
+}
