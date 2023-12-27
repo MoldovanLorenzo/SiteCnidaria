@@ -34,7 +34,7 @@ const AboutUs = () => {
         </div>
         </button>
       <div className='ButtonsContainer'>
-          <button onClick={handleSolutions}>Solutions</button>
+          <button onClick={handleSolutions}>News</button>
           <button onClick={handlePortofolio}>Apps</button>
           <button onClick={handleContact}>Contact</button>
           <button onClick={handleAboutus}>About us</button>

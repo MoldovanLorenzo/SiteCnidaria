@@ -3,6 +3,9 @@ import '../Styles/Portoflio.css';
 import poza from "../Assets/logo bun-fotor-bg-remover-20231130185051.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
+import pozaCoral from "../Assets/Coral-logos.jpeg";
+import pozaNutri from "../Assets/NutriVision-logos.jpeg";
+import pozaLive from "../Assets/Live Buss-logos.jpeg";
 
 const Portofolio = () => {
   const navigate = useNavigate();
@@ -36,7 +39,7 @@ const Portofolio = () => {
         </div>
         </button>
         <div className='ButtonsContainer'>
-          <button onClick={handleSolutions}>Solutions</button>
+          <button onClick={handleSolutions}>News</button>
           <button onClick={handlePortofolio}>Apps</button>
           <button onClick={handleContact}>Contact</button>
           <button onClick={handleAboutus}>About us</button>
@@ -45,20 +48,20 @@ const Portofolio = () => {
       <div className='container-aplicatii'>
         <button onClick={handleCoral} style={{ background: 'transparent' }}>
           <div className='aplicatie'>
-            <img src={poza} alt="Logo Aplicatie 1" />
-            <h>Nume Aplicatie 1</h>
+            <img src={pozaCoral} alt="Logo Aplicatie 1"  style={{borderRadius:30}}/>
+            <h style={{fontSize:30,fontWeight:'bold',fontStyle:'italic'}}>Coral</h>
           </div>
         </button>
         <button style={{ background: 'transparent' }}>
           <div className='aplicatie'>
-            <img src={poza} alt="Logo Aplicatie 2" />
-            <h>Nume Aplicatie 2</h>
+            <img src={pozaLive} alt="Logo Aplicatie 2"  style={{borderRadius:30}}/>
+            <h style={{fontSize:30,fontWeight:'bold',fontStyle:'italic'}}>Live Buss</h>
           </div>
         </button>
         <button style={{ background: 'transparent' }}>
           <div className='aplicatie'>
-            <img src={poza} alt="Logo Aplicatie 3" />
-            <h>Nume Aplicatie 3</h>
+            <img src={pozaNutri} alt="Logo Aplicatie 3"  style={{borderRadius:30}}/>
+            <h style={{fontSize:30,fontWeight:'bold',fontStyle:'italic'}}>NutriVision</h>
           </div>
         </button>
       </div>

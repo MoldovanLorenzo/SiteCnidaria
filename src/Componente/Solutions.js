@@ -19,55 +19,56 @@ const Solutions = () => {
   const handleAboutus = () => {
     navigate('/AboutUs');
   };
-  const handleHome=()=>{
-    navigate('/')
+  const handleHome = () => {
+    navigate('/');
   };
+  const newsData = [
+    {
+      id: 1,
+      title: 'Multilingual Chat: Instant Message Translation',
+      content: 'New Chat App Breakthrough: Real-Time Translation for Seamless Multilingual Conversations! Explore the Future of Global Communication. The app is set to launch in early 2024, bringing a new era of language diversity and effortless cross-cultural conversations to your fingertips. Stay tuned for a revolutionary experience in communication!',
+      imageUrl: require('../Assets/Coral-logos.jpeg')
+
+    },
+    {
+      id: 2,
+      title: 'The NutriVision app is under development.',
+      content: 'NutriVision, the app that identifies macronutrients through images, is currently under development. This innovative application aims to revolutionize nutritional tracking by analyzing photos and providing detailed information about the macronutrient content of various foods. Stay tuned for a new era in effortless nutritional awareness!',
+      imageUrl: require('../Assets/NutriVision-logos.jpeg')
+
+    },
+  ];
 
   return (
     <div className='container'>
       <div className='HeaderAboutUS'>
-      <button onClick={handleHome} style={{background:'transparent'}}>
-        <div className='LogoContainer'>
-          <img src={poza} alt="Logo" />
-          <span className='span'>Cnidaria</span>
-        </div>
+        <button onClick={handleHome} style={{ background: 'transparent' }}>
+          <div className='LogoContainer'>
+            <img src={poza} alt="Logo" />
+            <span className='span'>Cnidaria</span>
+          </div>
         </button>
         <div className='ButtonsContainer'>
-          <button onClick={handleSolutions}>Solutions</button>
+          <button onClick={handleSolutions}>News</button>
           <button onClick={handlePortofolio}>Apps</button>
           <button onClick={handleContact}>Contact</button>
           <button onClick={handleAboutus}>About us</button>
         </div>
       </div>
-      <div className='contents'>
-        <h className='titlumare'>Our <h className='soluti'>solutions</h> for your <h className='busines'>business</h></h>
-        <div className='row'>
-          <div className='container-box'>
-            <h className='box-title'>Software Development</h>
-            <p>Custom application development for various platforms (web, mobile, desktop). Development of business management software (ERP), accounting software, etc.</p>
-          </div>
-          <div className='container-box'>
-            <h className='box-title'>Web Design and Development</h>
-            <p>Creation of custom websites. Development of e-commerce platforms and online stores.</p>
-          </div>
-          <div className='container-box'>
-            <h className='box-title'>IT Consulting</h>
-            <p>Consultation on IT strategies and digital transformation. Assessment of IT security and infrastructure.</p>
-          </div>
-        </div>
-        <div className='row'>
-          <div className='container-box'>
-            <h className='box-title'>Cloud Services</h>
-            <p>Implementation of cloud storage and computing solutions. Migration to cloud platforms.</p>
-          </div>
-          <div className='container-box'>
-            <h className='box-title'>Maintenance and Support Services</h>
-            <p>Preventive and corrective maintenance for IT infrastructure. Technical support and user assistance.</p>
-          </div>
-          <div className='container-box'>
-            <h className='box-title'>Software Testing Services</h>
-            <p>Automated and manual software testing. Quality assurance for software products.</p>
-          </div>
+      <h1>News</h1>
+      <div className="news-page">
+        <div className="news-list">
+          {newsData.map(newsItem => (
+            <div key={newsItem.id} className="news-item">
+              <div className="news-image">
+                <img src={newsItem.imageUrl} alt={`News ${newsItem.id}`} />
+              </div>
+              <div className="news-content">
+                <h2>{newsItem.title}</h2>
+                <p style={{color:'gray'}}>{newsItem.content}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       <div className='footer'>

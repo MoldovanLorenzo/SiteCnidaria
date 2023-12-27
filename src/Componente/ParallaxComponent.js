@@ -38,24 +38,27 @@ const ParallaxComponent = () => {
           <img src={poza} alt="Logo" />
           <span className='span'>Cnidaria</span>
         </div>
-        <div className='ButtonsContainer'>
-          <button onClick={handleSolutions}>Solutions</button>
-          <button onClick={handlePortofolio}>Apps</button>
-          <button onClick={handleContact}>Contact</button>
-          <button onClick={handleAboutus}>About us</button>
-        </div>
+        <div className='AllButtonsContainer'>
+  <div className='ButtonsContainer'>
+    <button onClick={handleSolutions}>News</button>
+    <button onClick={handlePortofolio}>Apps</button>
+    <button onClick={handleContact}>Contact</button>
+    <button onClick={handleAboutus}>About us</button>
+  </div>
+  <div className="CustomButtonContainer">
+    <button className="CustomButton" style={{width:50,height:50,borderRadius:50}}></button>
+  <p style={{marginLeft:5}}>Login </p>
+  </div>
+</div>
       </div>
       <div className="BottomText" style={{ top: `${scrollPosition * 0.5}px` }}>
         <h1>Developing Software,</h1>
         <h2>Delivering Success.</h2>
         <h3>↓  Scroll for more</h3>
       </div>
-      <button className='assistancebutton'>
-  <img src={icon} alt="Logo" style={{ width: '40px', height: '40px' }} />
-</button>
 <div className='restulhomepage'>
 <div className="VerticalLineContainer">
-      <svg height="400" width="100%">
+      <svg height="300" width="100%">
         <line x1="50%" y1="10%" x2="50%" y2="90%" stroke="white" strokeWidth="4" />
         <circle cx="50%" cy="10%" r="10" fill="transparent" stroke="white" strokeWidth="4" />
         <circle cx="50%" cy="90%" r="10" fill="transparent" stroke="white" strokeWidth="4" />
@@ -65,23 +68,20 @@ const ParallaxComponent = () => {
     <div class="title-bar">
       <div class="window-title"></div>
       <div class="window-controls">
-        <button></button>
-        <button></button>
-        <button></button>
+      <button style={{background:'red'}}></button>
+        <button style={{background:'#FFBD44'}}></button>
+        <button style={{background:'green'}}></button>
       </div>
     </div>
-    <div class="content">
-      <p style={{color:'white'}}>- Web Development: From responsive websites to robust web applications, we craft solutions that drive your online success.<br/>
-      <br/>
-- Custom Software Development: Tailored software solutions designed to streamline your business processes and enhance efficiency.<br/>
-<br/>
-- UI/UX Design: Engaging and user-friendly designs that create memorable and positive experiences for your audience.<br/>
-<br/>
-- IT Consulting: Expert advice and strategic insights to help you make informed decisions in the ever-evolving tech landscape.</p>
+    <div class="content" style={{textAlign:'center'}}>
+      <p style={{color:'white'}}>Web Development: From responsive websites to robust web applications, we craft solutions that drive your online success.<br/>
+      <br/>Custom Software Development: Tailored software solutions designed to streamline your business processes and enhance efficiency.<br/>
+<br/>UI/UX Design: Engaging and user-friendly designs that create memorable and positive experiences for your audience.<br/>
+<br/>IT Consulting: Expert advice and strategic insights to help you make informed decisions in the ever-evolving tech landscape.</p>
     </div>
   </div>
   <div className="VerticalLineContainer">
-      <svg height="400" width="100%">
+      <svg height="300" width="100%">
         <line x1="50%" y1="10%" x2="50%" y2="90%" stroke="white" strokeWidth="4" />
         <circle cx="50%" cy="10%" r="10" fill="transparent" stroke="white" strokeWidth="4" />
         <circle cx="50%" cy="90%" r="10" fill="transparent" stroke="white" strokeWidth="4" />
@@ -91,9 +91,9 @@ const ParallaxComponent = () => {
     <div class="title-bar">
       <div class="window-title"></div>
       <div class="window-controls">
-        <button></button>
-        <button></button>
-        <button></button>
+        <button style={{background:'red'}}></button>
+        <button style={{background:'#FFBD44'}}></button>
+        <button style={{background:'green'}}></button>
       </div>
     </div>
     <div class="content">
@@ -105,7 +105,7 @@ const ParallaxComponent = () => {
     </div>
   </div>
   <div className="VerticalLineContainer">
-      <svg height="400" width="100%">
+      <svg height="300" width="100%">
         <line x1="50%" y1="10%" x2="50%" y2="90%" stroke="white" strokeWidth="4" />
         <circle cx="50%" cy="10%" r="10" fill="transparent" stroke="white" strokeWidth="4" />
         <circle cx="50%" cy="90%" r="10" fill="transparent" stroke="white" strokeWidth="4" />
@@ -115,9 +115,9 @@ const ParallaxComponent = () => {
     <div class="title-bar">
       <div class="window-title"></div>
       <div class="window-controls">
-        <button></button>
-        <button></button>
-        <button></button>
+      <button style={{background:'red'}}></button>
+        <button style={{background:'#FFBD44'}}></button>
+        <button style={{background:'green'}}></button>
       </div>
     </div>
     <div class="content">

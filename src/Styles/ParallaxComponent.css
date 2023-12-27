@@ -2,7 +2,7 @@
    position: relative;
     margin: 0;
     padding: 0;
-    height: 400vh;
+    height: 350vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,23 +99,6 @@
   .BottomText h2{
     font-size: 50px;
   }
-  .assistancebutton {
-    position: fixed;
-    bottom: 100px;
-    right: 100px;
-    background-color: #518582;
-    color: white;
-    padding: 25px;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    border-radius: 50px;
-    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .assistancebutton:hover {
-    background-color: #518582;
-  }
   .BottomText h3 {
     font-size:20px;
     font-weight:lighter;
@@ -182,12 +165,16 @@
 
   .title-bar button {
     width: 15px;
-    height: 14px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    background-color:#353935;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
   .content {
@@ -205,3 +192,18 @@
     padding: 20px;
     margin: 0;
   }
+
+
+.AllButtonsContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0px;
+  align-items: center;
+}
+
+.CustomButtonContainer {
+  margin-left: 50px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

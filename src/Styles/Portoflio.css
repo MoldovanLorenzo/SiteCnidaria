@@ -94,12 +94,12 @@
     margin: 20px auto;
     margin-top: 200px;
   }
-  
+
   .aplicatie {
     width: 250px;
     height: 350px;
     background-color: #f0f0f0;
-    margin: 20px auto; /* Am modificat margin pentru a centra elementele pe orizontală */
+    margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 2px solid #ccc;
@@ -107,7 +107,7 @@
     text-align: center;
     flex-direction: column;
     display: flex;
-    justify-content: space-between; /* Spațierea între elemente */
+    justify-content: space-between;
     color: #000;
   }
   .aplicatii {
