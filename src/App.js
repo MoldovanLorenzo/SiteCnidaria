@@ -7,9 +7,9 @@ import Portofolio from './Componente/Portofolio';
 import Contact from './Componente/Contact';
 import Solutions from './Componente/Solutions';
 import Coral from './Componente/Coral';
+import Account from './Componente/Account';
 const App = () => {
   return (
-    
     <Routes>
     <Route path="/" element={<ParallaxComponent/>} />
     <Route path="AboutUs" element={<AboutUs />}/>
@@ -17,6 +17,7 @@ const App = () => {
     <Route path="Contact" element={<Contact />} />
    <Route path="Solutions" element={<Solutions />} />
    <Route path="Coral" element={<Coral />} />
+   <Route path="Account" element={<Account />}/>
   </Routes>
   );
 };

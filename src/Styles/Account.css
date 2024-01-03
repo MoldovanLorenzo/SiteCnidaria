@@ -1,0 +1,131 @@
+
+
+.HeaderAboutUS {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  .LogoContainer {
+    display: flex;
+    align-items: center;
+  }
+  .ButtonsContainer {
+    display: flex;
+  }
+  .continutAccount {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    padding: 30px;
+    border: 2px solid black;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
+  .imagineProfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #518582;
+    margin-left: 40px;
+  }
+  .titluemail {
+    position: relative;
+    display: inline-block;
+    color: #333;
+    margin-left: 50px;
+  }
+  .logo2 {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    zoom: 250%;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  .footer-left button {
+    margin-right: 10px;
+  }
+  .footer-right {
+    text-align: center;
+  }
+  .titlunews {
+    margin-bottom: 10px;
+  }
+  .titluemail{
+    position: relative;
+    display: inline-block;
+    color: #333;
+  }
+  .titluemail::before,
+  .titluemail::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background-color: #333;
+  }
+  .titluemail::before {
+    right: 100%; 
+  }
+  .titluemail::after {
+    left: 100%;
+  }
+  .titluApps{
+    position: relative;
+    display: inline-block;
+    color: #333;
+    margin-left: 50px;
+  }
+  .titluApps::before,
+  .titluApps::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background-color: #333;
+  }
+  .titluApps::before {
+    right: 100%;
+  }
+  .titluApps::after {
+    left: 100%;
+  }
+  .sectiuneProfil
+  {
+    flex-direction: row;
+  }
+  .sectiuneProfil {
+    display: flex;
+    align-items: center; /* Aliniază elementele în centrul axei transversale */
+  }
+  
+  .imagineProfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px; /* Distanța între imagine și text */
+    border: 3px solid #518582;
+  }
+  
+  .titluemail,
+  .titluApps {
+    margin-bottom: 10px;
+  }

@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import icon from "../Assets/casti.png";
 import { useNavigate } from 'react-router-dom';
 const ParallaxComponent = () => {
+  const [popupVisible, setPopupVisible] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [loginFormVisible, setLoginFormVisible] = useState(true);
   const navigate = useNavigate();
 
   const handleScroll = () => {
@@ -23,6 +25,24 @@ const ParallaxComponent = () => {
   const handleAboutus = () => {
     navigate('/AboutUs');
   };
+  const handleAccount= () => {
+    navigate('/Account');
+  };
+  const handleCustomButtonClick = () => {
+    setPopupVisible(true);
+    setLoginFormVisible(true);
+  };
+
+  const handleSignUpButtonClick = () => {
+    setLoginFormVisible(false);
+  };
+
+  const handleLoginButtonClick = () => {
+    setLoginFormVisible(true);
+  };
+
+
+
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -46,7 +66,16 @@ const ParallaxComponent = () => {
     <button onClick={handleAboutus}>About us</button>
   </div>
   <div className="CustomButtonContainer">
-    <button className="CustomButton" style={{width:50,height:50,borderRadius:50}}></button>
+    {/* aici in butonu asa o sa pui imagine dupa ce se logheaza sa apoara imagiea la con*/}
+  <button
+      className="CustomButton"
+      style={{ width: 50, height: 50, borderRadius: 50 }}
+      onClick={() => {
+        handleCustomButtonClick();
+        handleLoginButtonClick();
+      }}
+    ></button>
+    {/*aici pui sa para numele dupa ce se conecteaza useru in loc de textu login*/}
   <p style={{marginLeft:5}}>Login </p>
   </div>
 </div>
@@ -129,8 +158,77 @@ const ParallaxComponent = () => {
     </div>
   </div>
     </div>
+    {/*aici ai 2 popup uri unu de login si unu de singuo
+    aici trebe numa sa faci logica la butoane*/}
+    {popupVisible && (
+        <div className="PopupOverlay">
+          <div className="PopupContent">
+            {loginFormVisible ? (
+              <div>
+                <h2>Login</h2>
+                <form onSubmit={(e) => e.preventDefault()}>
+                <label>
+          Email:
+          <input type="text" placeholder="Enter your email" />
+        </label>
+        <label>
+          Password:
+          <input type="password" placeholder="Enter your password" />
+        </label>
+        <button type="submit" onClick={() => setPopupVisible(false)}>
+          Login
+        </button>
+                </form>
+                <p>
+                  Don't have an account yet?{' '}
+                  <button
+                    style={{ background: 'transparent', color: '#518582', fontWeight: 'bold', fontSize: 13 }}
+                    onClick={handleSignUpButtonClick}
+                  >
+                    Sign up
+                  </button>
+                </p>
+              </div>
+            ) : (
+              <div>
+                <h2>Sign Up</h2>
+                <form onSubmit={(e) => e.preventDefault()}>
+                <label>
+          Email:
+          <input type="text" placeholder="Enter your email" />
+        </label>
+                <label>
+          Username:
+          <input type="text" placeholder="Enter your username" />
+        </label>
+        <label>
+          Password:
+          <input type="password" placeholder="Enter your password" />
+        </label>
+        <button type="submit" onClick={() => {
+        setPopupVisible(false);
+        handleAccount()}}>
+          Singup
+        </button>
+                </form>
+                <p>
+                  Already have an account?{' '}
+                  <button
+                    style={{ background: 'transparent', color: '#518582', fontWeight: 'bold', fontSize: 13 }}
+                    onClick={handleLoginButtonClick}
+                  >
+                    Login
+                  </button>
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+
+
 
 export default ParallaxComponent;
