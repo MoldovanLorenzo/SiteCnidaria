@@ -57,7 +57,7 @@ function Account() {
         <button>Change account password</button>
         <h2 className='titluApps'>Apps</h2>
         <img className='logo2' src={logo3} alt='logo3'></img>
-        <button style={{color:"red",background:"transparent", fontSize:15,fontWeight:'bold'}}>Delete Cnidaria Account</button>
+        <button style={{color:"red",background:"transparent", fontSize:15,fontWeight:'bold',position:'relative',bottom:40}}>Delete Cnidaria Account</button>
       </div>
       <div className='footer'>
         <div className='footer-left'>
