@@ -1,14 +1,86 @@
 import React, { useState, useEffect } from 'react';
 import "../Styles/ParallaxComponent.css";
 import poza from "../Assets/logo bun-fotor-bg-remover-20231130185051.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import icon from "../Assets/casti.png";
 import { useNavigate } from 'react-router-dom';
+//import AsyncStorage from "@react-native-async-storage/async-storage";
+import { FIREBASE_AUTH,FIREBASE_FIRESTORE } from "./firebase";
+import { collection, doc,getDoc,setDoc } from "firebase/firestore";
+import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
+
 const ParallaxComponent = () => {
   const [popupVisible, setPopupVisible] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loginFormVisible, setLoginFormVisible] = useState(true);
   const navigate = useNavigate();
+  const auth= FIREBASE_AUTH;
+const [username, setUsername] = useState("");
+const [password, setPassword] = useState("");
+const [email, setEmail] = useState("");
+
+const [name, setName] = useState("");
+const [photo, setPhoto] = useState(null);
+
+  const handleLogin = async () => {
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, password, {
+        remember: 'local', // sau 'session'
+      }); //photoURL
+      const user = response.user;
+      const usersCollection = collection(FIREBASE_FIRESTORE, 'users');
+      const userDocRef = doc(usersCollection, user.uid);
+      setName(user.displayName);
+      const userDocSnapshot = await getDoc(userDocRef);
+        const userData = userDocSnapshot.data();
+        const photo= userData.photo;
+        setPhoto(photo);
+        localStorage.setItem('user_username', user.displayName);
+        localStorage.setItem('user_id', user.uid);
+        if(userData.user_photo){
+          localStorage.setItem('user_photo',photo);
+        }else{
+          localStorage.removeItem('user_photo');
+        }
+        
+        navigate('/Account', {
+          state: {
+            username: user.displayName,
+            userEmail: user.email,
+            userPhoto: photo,
+          },
+        });
+       
+    } catch (error) {
+      console.log(error);
+      alert('Login failed! ' + error.message);
+    }
+  };
+
+  const handleSingup = async () => {
+    try{
+      const response = await createUserWithEmailAndPassword(auth,email,password)
+      const user= response.user;
+      await updateProfile(user,{
+        displayName:username,
+      })
+      const usersCollection = collection(FIREBASE_FIRESTORE, 'users');
+      const userDocRef = doc(usersCollection, user.uid);
+
+       await setDoc(userDocRef, {
+  email: user.email,
+  displayName: user.displayName,
+});
+   navigate('/Account', {
+     state: {
+      username: user.displayName,
+      userEmail: user.email,
+      userPhoto: photo,
+    },
+  });
+    }catch(error){
+       console.log(error)
+       alert('Error during signup! '+ error.message);
+    }
+  };
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
@@ -66,17 +138,15 @@ const ParallaxComponent = () => {
     <button onClick={handleAboutus}>About us</button>
   </div>
   <div className="CustomButtonContainer">
-    {/* aici in butonu asa o sa pui imagine dupa ce se logheaza sa apoara imagiea la con*/}
   <button
       className="CustomButton"
-      style={{ width: 50, height: 50, borderRadius: 50 }}
+      style={{ width: 50, height: 50, borderRadius: 50,}}
       onClick={() => {
         handleCustomButtonClick();
         handleLoginButtonClick();
       }}
     ></button>
-    {/*aici pui sa para numele dupa ce se conecteaza useru in loc de textu login*/}
-  <p style={{marginLeft:5}}>Login </p>
+   <p>Your Account</p>
   </div>
 </div>
       </div>
@@ -158,8 +228,6 @@ const ParallaxComponent = () => {
     </div>
   </div>
     </div>
-    {/*aici ai 2 popup uri unu de login si unu de singuo
-    aici trebe numa sa faci logica la butoane*/}
     {popupVisible && (
         <div className="PopupOverlay">
           <div className="PopupContent">
@@ -169,13 +237,23 @@ const ParallaxComponent = () => {
                 <form onSubmit={(e) => e.preventDefault()}>
                 <label>
           Email:
-          <input type="text" placeholder="Enter your email" />
+          <input
+            type="text"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </label>
         <label>
           Password:
-          <input type="password" placeholder="Enter your password" />
+          <input
+            type="text"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </label>
-        <button type="submit" onClick={() => setPopupVisible(false)}>
+        <button type="submit" onClick={handleLogin}>
           Login
         </button>
                 </form>
@@ -195,19 +273,32 @@ const ParallaxComponent = () => {
                 <form onSubmit={(e) => e.preventDefault()}>
                 <label>
           Email:
-          <input type="text" placeholder="Enter your email" />
+          <input
+            type="text"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </label>
                 <label>
           Username:
-          <input type="text" placeholder="Enter your username" />
+          <input
+            type="text"
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </label>
         <label>
           Password:
-          <input type="password" placeholder="Enter your password" />
+          <input
+            type="text"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </label>
-        <button type="submit" onClick={() => {
-        setPopupVisible(false);
-        handleAccount()}}>
+        <button type="submit" onClick={handleSingup}>
           Singup
         </button>
                 </form>
